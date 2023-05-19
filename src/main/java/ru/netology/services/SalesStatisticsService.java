@@ -5,23 +5,35 @@ import java.util.OptionalDouble;
 import java.util.stream.IntStream;
 
 public class SalesStatisticsService {
-    public int getSumAllSales(int[] sales) {
+    public int getSumAllSales(int[] allSales) {
 
-        return (int) Arrays.stream(sales).sum();
+        int sumSales = 0;
+        for (int i : allSales) {
+                sumSales = i + sumSales;
+
+        }
+        return sumSales;
 
     }
 
     public int averageSalesAmount(int[] allSales) {
+        int average =getSumAllSales(allSales) / allSales.length;
 
-        return (int) Arrays.stream(allSales).average().orElse(Double.NaN);
+            return average;
+
+
+
+
+
+
 
     }
 
-    public int maxSalesAmount(int[] maxSales) {
+    public int maxSalesAmount(int[] allSales) {
 
         int maxDay = 0;
-        for (int i = 0; i < maxSales.length; i++) {
-            if (maxSales[i] > maxSales[maxDay]) {
+        for (int i = 0; i < allSales.length; i++) {
+            if (allSales[i] > allSales[maxDay]) {
                 maxDay = i;
             }
         }
@@ -29,11 +41,11 @@ public class SalesStatisticsService {
 
     }
 
-    public int minSalesAmount(int[] maxSales) {
+    public int minSalesAmount(int[] allSales) {
 
-        int minDay = maxSales[0];
-        for (int i = 0; i < maxSales.length; i++) {
-            if (maxSales[i] < maxSales[minDay]) {
+        int minDay = allSales[0];
+        for (int i = 0; i < allSales.length; i++) {
+            if (allSales[i] < allSales[minDay]) {
                 minDay = i;
             }
         }
