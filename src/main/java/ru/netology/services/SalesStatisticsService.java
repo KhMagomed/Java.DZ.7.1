@@ -33,7 +33,7 @@ public class SalesStatisticsService {
 
         int maxDay = 0;
         for (int i = 0; i < allSales.length; i++) {
-            if (allSales[i] > allSales[maxDay]) {
+            if (allSales[i] >= allSales[maxDay]) {
                 maxDay = i;
             }
         }

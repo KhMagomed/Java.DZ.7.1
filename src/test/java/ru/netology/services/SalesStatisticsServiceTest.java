@@ -39,7 +39,7 @@ import java.util.Arrays;
         SalesStatisticsService service = new SalesStatisticsService();
         int[] allSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedDay = 5;
+        int expectedDay = 7;
         int actualDay = service.maxSalesAmount(allSales);
 
         Assertions.assertEquals(expectedDay, actualDay);
