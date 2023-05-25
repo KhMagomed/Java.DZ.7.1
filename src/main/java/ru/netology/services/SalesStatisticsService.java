@@ -9,7 +9,7 @@ public class SalesStatisticsService {
 
         int sumSales = 0;
         for (int i : allSales) {
-                sumSales = i + sumSales;
+            sumSales = i + sumSales;
 
         }
         return sumSales;
@@ -17,14 +17,9 @@ public class SalesStatisticsService {
     }
 
     public int averageSalesAmount(int[] allSales) {
-        int average =getSumAllSales(allSales) / allSales.length;
+        int average = getSumAllSales(allSales) / allSales.length;
 
-            return average;
-
-
-
-
-
+        return average;
 
 
     }
